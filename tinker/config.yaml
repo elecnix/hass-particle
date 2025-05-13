@@ -1,0 +1,12 @@
+name: "Tinker"
+description: "Start playing with your Particle device without writing any code."
+version: "1.0.0"
+slug: "tinker"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+
