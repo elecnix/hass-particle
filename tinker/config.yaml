@@ -1,7 +1,8 @@
 name: "Tinker"
-description: "Start playing with your Particle device without writing any code."
+description: "Start playing with your Particle device from Home Assistant."
 version: "1.0.0"
 slug: "tinker"
+panel_icon: mdi:chip
 init: false
 arch:
   - aarch64
@@ -9,4 +10,13 @@ arch:
   - armhf
   - armv7
   - i386
-
+options:
+  PARTICLE_AUTH:
+  PARTICLE_EVENT: spark/status
+  HASS_PUBLIC_URL:
+schema:
+  PARTICLE_AUTH: str
+  PARTICLE_EVENT: str?
+  HASS_PUBLIC_URL: str
+ingress: true
+homeassistant_api: true

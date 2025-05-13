@@ -1,0 +1,11 @@
+[project]
+name = "hass-particle-tinker"
+version = "0.1.0"
+description = "Start playing with your Particle device from Home Assistant."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flask>=3.1.1",
+    "requests>=2.32.3",
+    "watchdog>=6.0.0",
+]

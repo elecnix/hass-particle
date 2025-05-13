@@ -1,9 +1,13 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-# Copy data for add-on
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 COPY run.sh /
-RUN chmod a+x /run.sh
+COPY daemon.py /
+COPY .python-version /
+COPY pyproject.toml /
 
-CMD [ "/run.sh" ]
+RUN uv sync \
+    && chmod a+x /run.sh
 
+CMD [ "uv", "run", "/run.sh" ]
